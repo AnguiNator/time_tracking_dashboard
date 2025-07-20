@@ -1,0 +1,57 @@
+@use '../base/utils' as *;
+
+.container__item {
+    display: flex;
+    align-items: flex-end;
+    border-radius: 15px;
+
+    .container__data {
+        width: 327px;
+        height: 122px;
+        background-color: $color-navy-900;
+        border-radius: 15px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        @include desktop() {
+            height: 199px;
+        }
+
+        .container__activity {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include text-preset-5-medium();
+        }
+
+
+        .combined {
+            display: flex;
+            gap: 3px;
+        }
+
+        .oval {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: $color-grey;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .hrs {
+                @include text-preset-3();
+            }
+
+            .time {
+                @include text-preset-6();
+                color: $color-navy-200;
+            }
+        }
+    }
+}
