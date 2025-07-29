@@ -104,13 +104,25 @@ main {
         .selector {
             display: flex;
             justify-content: space-evenly;
-            color: $color-purple-500;
-            @include text-preset-5-regular();
+
+            #weekly {
+                color: $color-white;
+            }
+
+            button {
+                border: none;
+                background-color: $color-navy-900;
+                color: $color-purple-500;
+                @include text-preset-5-regular();
+            }
+
+
 
             @include desktop() {
                 flex-direction: column;
                 padding: 0 32px 32px 32px;
                 gap: 21px;
+                align-items: flex-start;
             }
         }
     }

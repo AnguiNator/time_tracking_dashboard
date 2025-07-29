@@ -34,6 +34,26 @@ textarea {
   display: flex;
   align-items: flex-end;
   border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.container__item img {
+  width: 78px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  transform: translate(232px, -92px);
+}
+@media screen and (min-width: 48em) {
+  .container__item img {
+    width: 57px;
+    transform: translate(119px, -164px);
+  }
+}
+@media screen and (min-width: 64em) {
+  .container__item img {
+    width: 78px;
+    transform: translate(157px, -175px);
+  }
 }
 .container__item .container__data {
   width: 327px;
@@ -44,10 +64,19 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  z-index: 1;
+}
+@media screen and (min-width: 48em) {
+  .container__item .container__data {
+    height: 180px;
+    gap: 16px;
+  }
 }
 @media screen and (min-width: 64em) {
   .container__item .container__data {
     height: 199px;
+    padding: 32px;
+    gap: 24px;
   }
 }
 .container__item .container__data .container__activity {
@@ -74,11 +103,26 @@ textarea {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (min-width: 48em) {
+  .container__item .container__data .stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
 .container__item .container__data .stats .hrs {
   font-weight: 300;
   font-size: 3.2rem;
   line-height: 3.8rem;
   letter-spacing: 0rem;
+}
+@media screen and (min-width: 48em) {
+  .container__item .container__data .stats .hrs {
+    font-weight: 300;
+    font-size: 5.6rem;
+    line-height: 6.6rem;
+    letter-spacing: 0rem;
+  }
 }
 .container__item .container__data .stats .time {
   font-weight: 400;
@@ -86,6 +130,9 @@ textarea {
   line-height: 1.8rem;
   letter-spacing: 0rem;
   color: #BBC0FF;
+}
+.container__item .container__data:hover {
+  background-color: #33397A;
 }
 
 main {
@@ -181,7 +228,7 @@ main .container__report .container__options .container__name p {
 main .container__report .container__options .container__name h1 {
   font-weight: 300;
   font-size: 2.4rem;
-  line-height: 1.8rem;
+  line-height: 2.8rem;
   letter-spacing: 0rem;
 }
 @media screen and (min-width: 64em) {
@@ -200,6 +247,13 @@ main .container__report .container__options .container__name h1 {
 main .container__report .selector {
   display: flex;
   justify-content: space-evenly;
+}
+main .container__report .selector #weekly {
+  color: #FFFFFF;
+}
+main .container__report .selector button {
+  border: none;
+  background-color: #1C204B;
   color: #7078C9;
   font-weight: 400;
   font-size: 1.8rem;
@@ -211,6 +265,7 @@ main .container__report .selector {
     flex-direction: column;
     padding: 0 32px 32px 32px;
     gap: 21px;
+    align-items: flex-start;
   }
 }
 main .work {

@@ -4,6 +4,25 @@
     display: flex;
     align-items: flex-end;
     border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        width: 78px;
+        aspect-ratio: 1/1;
+        position: absolute;
+        transform: translate(232px, -92px);
+
+        @include tablet() {
+            width: 57px;
+            transform: translate(119px, -164px);
+        }
+
+        @include desktop() {
+            width: 78px;
+            transform: translate(157px, -175px);
+        }
+    }
 
     .container__data {
         width: 327px;
@@ -14,9 +33,17 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
+        z-index: 1;
+
+        @include tablet() {
+            height: 180px;
+            gap: 16px;
+        }
 
         @include desktop() {
             height: 199px;
+            padding: 32px;
+            gap: 24px;
         }
 
         .container__activity {
@@ -44,8 +71,18 @@
             justify-content: space-between;
             align-items: center;
 
+            @include tablet() {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
             .hrs {
                 @include text-preset-3();
+
+                @include tablet() {
+                    @include text-preset-1();
+                }
             }
 
             .time {
@@ -53,5 +90,9 @@
                 color: $color-navy-200;
             }
         }
+    }
+
+    .container__data:hover {
+        background-color: $color-navy-800;
     }
 }
