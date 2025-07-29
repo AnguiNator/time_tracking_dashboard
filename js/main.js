@@ -19,38 +19,38 @@ promise
 
 
 function dataDOM(data) {
-    const stats = document.querySelectorAll('.stats');
-    const action = document.querySelectorAll('.action');
+    const statsCards = document.querySelectorAll('.stats');
+    const filterButtons = document.querySelectorAll('.action');
 
-    let selection = 'weekly';
+    let currenttimeframe = 'weekly';
 
-    data.forEach(item => {
-        stats.forEach(stat => {
-            if (stat.dataset.statsName == item.title) {
-                stat.innerHTML += `  <p class="hrs">${item.timeframes[selection].current}hrs</p>
-                <p class="time">Last Week - ${item.timeframes[selection].previous}hrs</p>`;
+    data.forEach(entry => {
+        statsCards.forEach(statCard => {
+            if (statCard.dataset.statsName == entry.title) {
+                statCard.innerHTML += `  <p class="hrs">${entry.timeframes[currenttimeframe].current}hrs</p>
+                <p class="time">Last Week - ${entry.timeframes[currenttimeframe].previous}hrs</p>`;
             }
         })
     });
 
-    action.forEach(item => {
+    filterButtons.forEach(item => {
         item.addEventListener("click", () => {
 
-            action.forEach(noActive => {
-                noActive.style.color = '#7078C9';
+            filterButtons.forEach(btn => {
+                btn.style.color = '#7078C9';
             })
 
-            selection = item.id;
-            const active = document.getElementById(selection);
-            active.style.color = "White";
+            currenttimeframe = item.id;
+            const activeButton = document.getElementById(currenttimeframe);
+            activeButton.style.color = "White";
 
 
             data.forEach(item => {
-                stats.forEach(stat => {
-                    if (stat.dataset.statsName == item.title) {
-                        stat.innerHTML = ' ';
-                        stat.innerHTML += `<p class="hrs">${item.timeframes[selection].current}hrs</p>
-                <p class="time">Last Week - ${item.timeframes[selection].previous}hrs</p>`;
+                statsCards.forEach(statCard => {
+                    if (statCard.dataset.statsName == item.title) {
+                        statCard.innerHTML = ' ';
+                        statCard.innerHTML += `<p class="hrs">${item.timeframes[currenttimeframe].current}hrs</p>
+                <p class="time">Last Week - ${item.timeframes[currenttimeframe].previous}hrs</p>`;
                     }
                 })
             });
