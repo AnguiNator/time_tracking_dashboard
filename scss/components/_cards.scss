@@ -3,47 +3,45 @@
 .container__item {
     display: flex;
     align-items: flex-end;
-    border-radius: 15px;
+    border-radius: $space-16;
     position: relative;
     overflow: hidden;
 
     img {
-        width: 78px;
+        width: 7.8rem;
         aspect-ratio: 1/1;
         position: absolute;
-        transform: translate(232px, -92px);
+        transform: translate(23.2rem, -9.2rem);
 
         @include tablet() {
-            width: 57px;
-            transform: translate(119px, -164px);
+            width: 5.7rem;
+            transform: translate(11.9rem, -16.4rem);
         }
 
         @include desktop() {
-            width: 78px;
-            transform: translate(157px, -175px);
+            width: 7.8rem;
+            transform: translate(15.7rem, -17.5rem);
         }
     }
 
     .container__data {
-        width: 327px;
-        height: 122px;
+        width: 32.7rem;
+        height: 12.2rem;
         background-color: $color-navy-900;
-        border-radius: 15px;
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+        border-radius: $space-16;
+        padding: $space-24;
+        @include flexbox(column, $space-8);
         z-index: 1;
 
         @include tablet() {
-            height: 180px;
-            gap: 16px;
+            height: 18rem;
+            gap: $space-16;
         }
 
         @include desktop() {
-            height: 199px;
-            padding: 32px;
-            gap: 24px;
+            height: 19.9rem;
+            padding: $space-32;
+            gap: $space-24;
         }
 
         .container__activity {
@@ -55,13 +53,12 @@
 
 
         .combined {
-            display: flex;
-            gap: 3px;
+            @include flexbox(row, 0.3rem);
         }
 
         .oval {
-            width: 5px;
-            height: 5px;
+            width: 0.5rem;
+            height: 0.5rem;
             border-radius: 50%;
             background-color: $color-grey;
         }
@@ -74,7 +71,7 @@
             @include tablet() {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 8px;
+                gap: $space-8;
             }
 
             .hrs {

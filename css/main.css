@@ -11,15 +11,14 @@ html {
 }
 
 body {
-  width: 100vw;
-  height: 1469px;
+  height: 146.9rem;
   background-color: #0E1323;
   align-content: center;
 }
 @media screen and (min-width: 48em) {
   body {
     width: 100%;
-    height: 1024px;
+    height: 102.4rem;
   }
 }
 
@@ -33,50 +32,50 @@ textarea {
 .container__item {
   display: flex;
   align-items: flex-end;
-  border-radius: 15px;
+  border-radius: 1.6rem;
   position: relative;
   overflow: hidden;
 }
 .container__item img {
-  width: 78px;
+  width: 7.8rem;
   aspect-ratio: 1/1;
   position: absolute;
-  transform: translate(232px, -92px);
+  transform: translate(23.2rem, -9.2rem);
 }
 @media screen and (min-width: 48em) {
   .container__item img {
-    width: 57px;
-    transform: translate(119px, -164px);
+    width: 5.7rem;
+    transform: translate(11.9rem, -16.4rem);
   }
 }
 @media screen and (min-width: 64em) {
   .container__item img {
-    width: 78px;
-    transform: translate(157px, -175px);
+    width: 7.8rem;
+    transform: translate(15.7rem, -17.5rem);
   }
 }
 .container__item .container__data {
-  width: 327px;
-  height: 122px;
+  width: 32.7rem;
+  height: 12.2rem;
   background-color: #1C204B;
-  border-radius: 15px;
-  padding: 24px;
+  border-radius: 1.6rem;
+  padding: 2.4rem;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.8rem;
   z-index: 1;
 }
 @media screen and (min-width: 48em) {
   .container__item .container__data {
-    height: 180px;
-    gap: 16px;
+    height: 18rem;
+    gap: 1.6rem;
   }
 }
 @media screen and (min-width: 64em) {
   .container__item .container__data {
-    height: 199px;
-    padding: 32px;
-    gap: 24px;
+    height: 19.9rem;
+    padding: 3.2rem;
+    gap: 2.4rem;
   }
 }
 .container__item .container__data .container__activity {
@@ -90,11 +89,12 @@ textarea {
 }
 .container__item .container__data .combined {
   display: flex;
-  gap: 3px;
+  flex-direction: row;
+  gap: 0.3rem;
 }
 .container__item .container__data .oval {
-  width: 5px;
-  height: 5px;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 50%;
   background-color: #D8D8D8;
 }
@@ -107,7 +107,7 @@ textarea {
   .container__item .container__data .stats {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 0.8rem;
   }
 }
 .container__item .container__data .stats .hrs {
@@ -136,40 +136,40 @@ textarea {
 }
 
 main {
-  width: 350px;
+  width: 35rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 327px;
-  grid-template-rows: 203px repeat(6, 160px);
-  gap: 24px;
+  grid-template-columns: 32.7rem;
+  grid-template-rows: 20.3rem repeat(6, 16rem);
+  gap: 2.4rem;
   justify-content: center;
 }
 @media screen and (min-width: 48em) {
   main {
-    width: 612px;
-    grid-template-columns: repeat(3, 188px);
-    grid-template-rows: 213px repeat(2, 213px);
+    width: 61.2rem;
+    grid-template-columns: repeat(3, 18.8rem);
+    grid-template-rows: repeat(3, 21.3rem);
   }
 }
 @media screen and (min-width: 64em) {
   main {
     width: -moz-fit-content;
     width: fit-content;
-    grid-template-columns: repeat(4, 255px);
-    grid-template-rows: repeat(2, 244px);
-    gap: 32px;
+    grid-template-columns: repeat(4, 25.5rem);
+    grid-template-rows: repeat(2, 24.4rem);
+    gap: 3.2rem;
   }
 }
 main .container__report {
   background-color: #1C204B;
-  border-radius: 15px;
+  border-radius: 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 2.4rem;
 }
 @media screen and (min-width: 48em) {
   main .container__report {
-    height: 203px;
+    height: 20.3rem;
     grid-column: span 3/span 3;
   }
 }
@@ -182,12 +182,13 @@ main .container__report {
 }
 main .container__report .container__options {
   width: 100%;
-  height: 133px;
+  height: 13.3rem;
   background-color: #5747EA;
-  border-radius: 15px;
-  padding: 32px;
+  border-radius: 1.6rem;
+  padding: 3.2rem;
   display: flex;
-  gap: 24px;
+  flex-direction: row;
+  gap: 2.4rem;
   align-items: center;
 }
 @media screen and (min-width: 64em) {
@@ -197,26 +198,26 @@ main .container__report .container__options {
   }
 }
 main .container__report .container__options .container__img {
-  width: 64px;
-  height: 64px;
+  width: 6.4rem;
+  aspect-ratio: 1/1;
   overflow: hidden;
 }
 @media screen and (min-width: 64em) {
   main .container__report .container__options .container__img {
-    width: 78px;
-    height: 78px;
+    width: 7.8rem;
+    aspect-ratio: 1/1;
   }
 }
 main .container__report .container__options .container__img img {
   width: 100%;
   height: 100%;
-  border: 3px solid white;
+  border: 0.3rem solid white;
   border-radius: 50%;
 }
 main .container__report .container__options .container__name {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.8rem;
 }
 main .container__report .container__options .container__name p {
   font-weight: 400;
@@ -241,7 +242,7 @@ main .container__report .container__options .container__name h1 {
 }
 @media screen and (min-width: 64em) {
   main .container__report .container__options {
-    height: 354px;
+    height: 35.4rem;
   }
 }
 main .container__report .selector {
@@ -263,8 +264,8 @@ main .container__report .selector button {
 @media screen and (min-width: 64em) {
   main .container__report .selector {
     flex-direction: column;
-    padding: 0 32px 32px 32px;
-    gap: 21px;
+    padding: 0 3.2rem 3.2rem 3.2rem;
+    gap: 2.1rem;
     align-items: flex-start;
   }
 }
