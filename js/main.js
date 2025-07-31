@@ -24,6 +24,7 @@ function dataDOM(data) {
 
     updateView('weekly', data, statsCards);
 
+
     filterButtons.forEach(item => {
         item.addEventListener("click", () => {
 
@@ -41,7 +42,7 @@ function dataDOM(data) {
 }
 
 function updateView(timeframe, data, cards) {
-    const timeLabels = { daily: 'Yesterday', weekly: 'Last Week', monthly: 'Last Mont' }
+    const timeLabels = { daily: 'Yesterday', weekly: 'Last Week', monthly: 'Last Month' }
     const cardMaps = new Map([...cards].map(card => [card.dataset.statsName, card]));
 
     data.forEach(entry => {
@@ -52,7 +53,7 @@ function updateView(timeframe, data, cards) {
 
             hrsElement.className = 'hrs';
             timeElement.className = 'time';
-            statCard.textContent = ' ';
+            statCard.textContent = '';
             hrsElement.textContent = `${entry.timeframes[timeframe].current}hrs`;
             timeElement.textContent = `${timeLabels[timeframe]} - ${entry.timeframes[timeframe].previous}hrs`;
             statCard.append(hrsElement);
