@@ -22,38 +22,41 @@ function dataDOM(data) {
     const statsCards = document.querySelectorAll('.stats');
     const filterButtons = document.querySelectorAll('.action');
 
-    let currenttimeframe = 'weekly';
-
-    data.forEach(entry => {
-        statsCards.forEach(statCard => {
-            if (statCard.dataset.statsName == entry.title) {
-                statCard.innerHTML += `  <p class="hrs">${entry.timeframes[currenttimeframe].current}hrs</p>
-                <p class="time">Last Week - ${entry.timeframes[currenttimeframe].previous}hrs</p>`;
-            }
-        })
-    });
+    updateView('weekly', data, statsCards);
 
     filterButtons.forEach(item => {
         item.addEventListener("click", () => {
 
+
             filterButtons.forEach(btn => {
-                btn.style.color = '#7078C9';
+                btn.classList.remove('active')
             })
 
-            currenttimeframe = item.id;
-            const activeButton = document.getElementById(currenttimeframe);
-            activeButton.style.color = "White";
+            const activeButton = document.getElementById(item.id);
+            activeButton.classList.add('active');
 
-
-            data.forEach(item => {
-                statsCards.forEach(statCard => {
-                    if (statCard.dataset.statsName == item.title) {
-                        statCard.innerHTML = ' ';
-                        statCard.innerHTML += `<p class="hrs">${item.timeframes[currenttimeframe].current}hrs</p>
-                <p class="time">Last Week - ${item.timeframes[currenttimeframe].previous}hrs</p>`;
-                    }
-                })
-            });
+            updateView(item.id, data, statsCards);
         })
+    })
+}
+
+function updateView(timeframe, data, cards) {
+    const timeLabels = { daily: 'Yesterday', weekly: 'Last Week', monthly: 'Last Mont' }
+    const cardMaps = new Map([...cards].map(card => [card.dataset.statsName, card]));
+
+    data.forEach(entry => {
+        if (cardMaps.has(entry.title)) {
+            const statCard = cardMaps.get(entry.title);
+            const hrsElement = document.createElement('p');
+            const timeElement = document.createElement('p');
+
+            hrsElement.className = 'hrs';
+            timeElement.className = 'time';
+            statCard.textContent = ' ';
+            hrsElement.textContent = `${entry.timeframes[timeframe].current}hrs`;
+            timeElement.textContent = `${timeLabels[timeframe]} - ${entry.timeframes[timeframe].previous}hrs`;
+            statCard.append(hrsElement);
+            statCard.append(timeElement);
+        }
     })
 }

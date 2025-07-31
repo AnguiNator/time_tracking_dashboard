@@ -92,6 +92,14 @@ textarea {
   flex-direction: row;
   gap: 0.3rem;
 }
+.container__item .container__data .combined::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #D8D8D8;
+  box-shadow: -1rem 0 0 #D8D8D8, -2rem 0 0 #D8D8D8;
+}
 .container__item .container__data .oval {
   width: 0.5rem;
   height: 0.5rem;
@@ -249,10 +257,7 @@ main .container__report .selector {
   display: flex;
   justify-content: space-evenly;
 }
-main .container__report .selector #weekly {
-  color: #FFFFFF;
-}
-main .container__report .selector button {
+main .container__report .selector .action {
   border: none;
   background-color: #1C204B;
   color: #7078C9;
@@ -260,6 +265,9 @@ main .container__report .selector button {
   font-size: 1.8rem;
   line-height: 2.1rem;
   letter-spacing: 0rem;
+}
+main .container__report .selector .action.active {
+  color: #FFFFFF;
 }
 @media screen and (min-width: 64em) {
   main .container__report .selector {

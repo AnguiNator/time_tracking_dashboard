@@ -100,18 +100,16 @@ main {
             display: flex;
             justify-content: space-evenly;
 
-            #weekly {
-                color: $color-white;
-            }
-
-            button {
+            .action {
                 border: none;
                 background-color: $color-navy-900;
                 color: $color-purple-500;
                 @include text-preset-5-regular();
+
+                &.active {
+                    color: $color-white;
+                }
             }
-
-
 
             @include desktop() {
                 flex-direction: column;
@@ -120,6 +118,7 @@ main {
                 align-items: flex-start;
             }
         }
+
     }
 
     .work {

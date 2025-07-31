@@ -56,6 +56,16 @@
             @include flexbox(row, 0.3rem);
         }
 
+        .combined::after {
+            content: "";
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background-color: $color-grey;
+            box-shadow: -1rem 0 0 $color-grey,
+                -2rem 0 0 $color-grey;
+        }
+
         .oval {
             width: 0.5rem;
             height: 0.5rem;
@@ -87,9 +97,9 @@
                 color: $color-navy-200;
             }
         }
-    }
 
-    .container__data:hover {
-        background-color: $color-navy-800;
+        &:hover {
+            background-color: $color-navy-800;
+        }
     }
 }
