@@ -9,7 +9,7 @@ Permite visualizar el tiempo dedicado a distintas actividades y conmutar entre l
 
 | Escritorio | Móvil |
 |------------|-------|
-| ![Versión de escritorio](assets/screenshots/descktop.png "Vista desktop") | ![Versión móvil](assets/screenshots/mobil.png "Vista mobile") |
+| ![Versión de escritorio](./screenshots/descktop.png "Vista desktop") | ![Versión móvil](./screenshots/mobil.png "Vista mobile") |
 
 ---
 
